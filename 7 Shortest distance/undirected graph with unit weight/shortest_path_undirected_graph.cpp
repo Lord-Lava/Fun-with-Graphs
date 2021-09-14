@@ -28,8 +28,8 @@ vector<int>shortest_path(int n,vector<int>adj[],int src){   //src is the startin
 }
 
 int main(){
-    int n,m;
-    cin>>n>>m;
+    int n,m,src;
+    cin>>n>>m>>src;
 
     vector<int>adj[n];
 
@@ -41,7 +41,7 @@ int main(){
         adj[y].push_back(x);
     }
 
-    vector<int>ans = shortest_path(n,adj,0);
+    vector<int>ans = shortest_path(n,adj,src);
 
     for (int i = 0; i < ans.size(); i++)
     {
