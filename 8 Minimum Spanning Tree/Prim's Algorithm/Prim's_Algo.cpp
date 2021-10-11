@@ -8,7 +8,9 @@ using namespace std;
 vector<int> prims_algo(int n,vector<pair<int,int>>adj[]){
     vector<int>parent(n,-1);
     vector<int>key(n,INT_MAX);
-    // vector<bool>MST(n,false);
+    //Note-> MST set is just used here for maintaining what all nodes have been included in the MST 
+    //and does not actually help in the code (pq.pop() replacing its use) as in the brute force approach
+    vector<bool>MST(n,false);
 
     key[0] = 0;
 
@@ -20,7 +22,7 @@ vector<int> prims_algo(int n,vector<pair<int,int>>adj[]){
         int node = pq.top().second;;
         pq.pop();
 
-        // MST[node] = true;
+        MST[node] = true;
 
         for(auto it:adj[node]){
             if(it.second < key[it.first]){
