@@ -11,7 +11,7 @@ vector<int> prims_algo(int n,vector<pair<int,int>>adj[]){
 
     key[0] = 0;
 
-    for (int i = 0; i < n-1; i++)
+    for (int e = 0; e < n-1; e++)
     {
         int mini = INT_MAX;
         int node;

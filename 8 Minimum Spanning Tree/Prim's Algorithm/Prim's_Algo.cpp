@@ -17,7 +17,7 @@ vector<int> prims_algo(int n,vector<pair<int,int>>adj[]){
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
     pq.push({0,0});
 
-    for (int i = 0; i < n-1; i++)
+    for (int e = 0; e < n-1; e++)
     {
         int node = pq.top().second;;
         pq.pop();
