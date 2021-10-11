@@ -4,7 +4,8 @@
 
 using namespace std;
 
-void prims_algo(int n,vector<pair<int,int>>adj[],vector<int>&parent){
+vector<int> prims_algo(int n,vector<pair<int,int>>adj[]){
+    vector<int>parent(n,-1);
     vector<int>key(n,INT_MAX);
     vector<bool>MST(n,false);
 
@@ -31,8 +32,8 @@ void prims_algo(int n,vector<pair<int,int>>adj[],vector<int>&parent){
                 parent[it.first] = node;
             }
         }
-        
     }
+    return parent;
 }
 
 int main(){
@@ -49,9 +50,7 @@ int main(){
         adj[v].push_back({u,w});
     }
 
-    vector<int>parent(n,-1);
-
-    prims_algo(n,adj,parent);
+    vector<int>parent = prims_algo(n,adj);
 
     for(int i=1;i<parent.size();i++){
         cout<<parent[i]<<" - "<<i<<endl;
